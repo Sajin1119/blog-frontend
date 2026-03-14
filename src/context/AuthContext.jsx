@@ -14,19 +14,19 @@ export const AuthProvider = ({ children }) => {
     }
   });
 const login = (access, refresh, userData) => {
-  localStorage.setItem("access_token", access);  // ← must match axios
+  console.log('Saving token:', access); // 👈 add this
+  localStorage.setItem("access_token", access);
   localStorage.setItem("refresh_token", refresh);
   localStorage.setItem("user", JSON.stringify(userData));
   setUser(userData);
 };
 
-  const logout = () => {
-    localStorage.removeItem("access");
-    localStorage.removeItem("refresh");
-    localStorage.removeItem("user");
-
-    setUser(null);
-  };
+const logout = () => {
+  localStorage.removeItem("access_token");   // ✅ match login keys
+  localStorage.removeItem("refresh_token");  // ✅ match login keys
+  localStorage.removeItem("user");
+  setUser(null);
+};
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>

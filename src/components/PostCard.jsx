@@ -143,10 +143,10 @@ const PostCard = ({ post }) => {
                   {authorInitial}
                 </div>
               )}
-              <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#444' }}>{authorName}</span>
+              <Link to={`/user/${authorName}`} style={{ fontSize: '0.8rem', fontWeight: 600, color: '#444', textDecoration: 'none' }} onClick={e => e.stopPropagation()}>{authorName}</Link>
             </div>
 
-
+            {/* Stats + Read more */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <span style={{ fontSize: '0.75rem', color: '#aaa' }}>
                 👁 {post.views_count}

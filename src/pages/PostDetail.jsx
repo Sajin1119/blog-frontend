@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import API from "../api/axios";
 import Navbar from "../components/Navbar";
@@ -86,7 +86,7 @@ const PostDetail = () => {
 
   const handleDelete = () => {
     if (!window.confirm("Delete this post?")) return;
-    API.delete(`api/posts/delete/${post.id}/`)
+    API.delete(`api/posts/delete/${post.slug}/`)
       .then(() => { alert("Post deleted"); navigate("/"); })
       .catch((err) => console.error("Failed to delete post:", err));
   };
@@ -107,8 +107,7 @@ const PostDetail = () => {
 
   const handleDeleteComment = (commentId) => {
     if (!window.confirm("Delete this comment?")) return;
-    // PostDetail.jsx - handleDeleteComment
-    API.delete(`api/comments/delete/${commentId}/`)
+      API.delete(`api/comments/delete/${commentId}/`)
       .then(() => setComments((prev) => prev.filter((c) => c.id !== commentId)))
       .catch((err) => console.error("Failed to delete comment:", err));
   };
@@ -140,7 +139,7 @@ const PostDetail = () => {
         <div className="d-flex align-items-center gap-3 mb-3">
           <Avatar user={post.author} size={46} />
           <div>
-            <div className="fw-semibold">{post.author?.username}</div>
+            <Link to={`/user/${post.author?.username}`} style={{ fontWeight: 600, color: '#1a1a2e', textDecoration: 'none' }}>{post.author?.username}</Link>
             <div className="text-muted small">
               {new Date(post.created_at).toLocaleDateString("en-US", {
                 year: "numeric", month: "long", day: "numeric"

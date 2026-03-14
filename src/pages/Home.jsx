@@ -166,7 +166,7 @@ const Home = () => {
             <p className="hero-title text-uppercase mb-3" style={{
               color: '#e0c97f', letterSpacing: '5px', fontSize: '0.72rem', fontWeight: 700
             }}>
-              ✦ &nbsp; Welcome to the Blog &nbsp; ✦
+              ✦ &nbsp; Welcome to Sajin's Blog &nbsp; ✦
             </p>
 
             <h1 className="hero-title" style={{
@@ -183,7 +183,7 @@ const Home = () => {
               color: 'rgba(255,255,255,0.5)', fontSize: '1rem',
               maxWidth: '440px', margin: '0 auto 36px', lineHeight: 1.7
             }}>
-              Discover articles, tutorials, and ideas from writers around the world.
+              Discover articles, tutorials, and ideas by Sajin and friends.
             </p>
 
             {/* Search */}
@@ -311,14 +311,22 @@ const Home = () => {
         </div>
 
         {/* ── Footer ── */}
-        <div style={{
-          background: '#1a1a2e', color: 'rgba(255,255,255,0.4)',
-          textAlign: 'center', padding: '28px',
-          fontSize: '0.82rem', marginTop: '40px'
-        }}>
-          <span style={{ color: '#e0c97f' }}>✦ Blog Platform</span>
-          &nbsp;·&nbsp; Built with Django & React
-        </div>
+<div style={{
+  background: '#1a1a2e', color: 'rgba(255,255,255,0.4)',
+  textAlign: 'center', padding: '28px',
+  fontSize: '0.82rem', marginTop: '40px'
+}}>
+  <span style={{ color: '#e0c97f' }}>✦ Sajin's Blog</span>
+  &nbsp;·&nbsp; Built by&nbsp;
+  <a href="https://github.com/Sajin1119" target="_blank" rel="noreferrer"
+    style={{ color: '#e0c97f', textDecoration: 'none' }}>Sajin</a>
+  &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/sajinsatheesan/" target="_blank" rel="noreferrer"
+    style={{ color: '#e0c97f', textDecoration: 'none' }}>LinkedIn</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/Sajin1119" target="_blank" rel="noreferrer"
+    style={{ color: '#e0c97f', textDecoration: 'none' }}>GitHub</a>
+</div>
       </div>
     </>
   );
